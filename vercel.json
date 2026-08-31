@@ -5,10 +5,10 @@
       "has": [
         {
           "type": "host",
-          "value": "divi-safety-nets.vercel.app"
+          "value": "divisafetynets.vercel.app"
         }
       ],
-      "destination": "https://kennysafetynets.in/$1",
+      "destination": "https://divisafetynets.in/$1",
       "permanent": true
     }
   ]
