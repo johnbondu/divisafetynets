@@ -896,3 +896,46 @@ Please contact me regarding my requirement.`;
     });
 
 });
+
+        /* =========================================================
+           GALLERY FILTER
+        ========================================================= */
+
+ 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".gallery-filter");
+    const galleryCards = document.querySelectorAll(".gallery-card");
+    const galleryCount = document.getElementById("galleryCount");
+    const galleryEmpty = document.getElementById("galleryEmpty");
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const selectedFilter = button.getAttribute("data-filter");
+            let visibleCount = 0;
+
+            filterButtons.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            galleryCards.forEach(function (card) {
+                const cardCategory = card.getAttribute("data-category");
+
+                if (
+                    selectedFilter === "all" ||
+                    cardCategory === selectedFilter
+                ) {
+                    card.style.display = "";
+                    visibleCount++;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            galleryCount.textContent = visibleCount;
+            galleryEmpty.hidden = visibleCount !== 0;
+        });
+    });
+});
