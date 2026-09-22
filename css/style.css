@@ -15962,3 +15962,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
 }
+/* Hide top information bar */
+.topbar {
+    display: none !important;
+}
