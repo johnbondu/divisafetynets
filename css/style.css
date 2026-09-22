@@ -15903,3 +15903,62 @@ body {
         transition: none !important
     }
 }
+/* =========================================================
+   FINAL MOBILE HEADER + HAMBURGER FIX
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        height: 82px;
+    }
+
+    .navbar {
+        height: 82px;
+        position: relative;
+    }
+
+    .brand {
+        width: auto;
+        max-width: calc(100% - 70px);
+    }
+
+    .brand-logo {
+        width: 174px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .mobile-menu-button {
+        display: flex !important;
+
+        position: absolute;
+        top: 50%;
+        right: 0;
+
+        width: 50px;
+        height: 50px;
+
+        margin: 0;
+        padding: 0;
+
+        transform: translateY(-50%);
+
+        flex-shrink: 0;
+        z-index: 2100;
+    }
+
+    .mobile-menu-button:hover {
+        transform: translateY(-50%);
+    }
+}
+.navbar {
+    position: relative;
+}
+
+.mobile-menu-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
