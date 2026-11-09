@@ -299,11 +299,7 @@
     </script> -->
 
 
-    <script>
-        gtag('event', 'conversion', {
-            'send_to': 'AW-18419725308/F051COPmofQcEPznms9E'
-        });
-    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18419725308"></script>
     <script>
@@ -313,7 +309,38 @@
 
         gtag('config', 'AW-18419725308');
     </script>
+    <!-- Google Ads Call Click Tracking -->
+    <script>
+        document.addEventListener('click', function (event) {
 
+            const button = event.target.closest('a[href^="tel:"]');
+
+            if (!button) return;
+
+            event.preventDefault();
+
+            const phone = button.href;
+            let completed = false;
+
+            function openPhone() {
+                if (completed) return;
+                completed = true;
+                window.location.href = phone;
+            }
+
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'conversion', {
+                    'send_to': 'AW-18419725308/F051COPmofQcEPznms9E',
+                    'value': 1.0,
+                    'currency': 'INR',
+                    'event_callback': openPhone
+                });
+            }
+
+            setTimeout(openPhone, 1000);
+
+        }, true);
+    </script>
 
 
     <!-- =========================================================
